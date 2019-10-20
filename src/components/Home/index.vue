@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-link to="/AsyncComponent">点击跳转AsyncComponent动态路由组件</router-link>
-    <el-table :data="tableData" stripe height="250" border style="width: 100%">
+    <el-table :data="tableData" stripe border style="width: 100%">
       <el-table-column prop="name" label="组件名" width="180">
         <template slot-scope="scope">
           <router-link :to="'/'+scope.row.name">{{scope.row.Zhname}}</router-link>
