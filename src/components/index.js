@@ -5,6 +5,11 @@ import Lazy from "./Lazy"
 import Recursion from "./Recursion"
 import Functional from "./Functional"
 import Extend from "./Extend"
+import Mixin from "./Mixin"
+import Extends from "./Extends"
+import Slot from "./Slot"
+import ValueModel from "./ValueModel"
+import Watch from "./Watch"
 
 const AllComponents = {
   Home,
@@ -13,6 +18,11 @@ const AllComponents = {
   Lazy,
   Recursion,
   Functional,
-  Extend
+  Extend,
+  Mixin,
+  Extends,
+  Slot,
+  ValueModel,
+  Watch
 }
 export default AllComponents

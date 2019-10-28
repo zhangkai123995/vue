@@ -1,25 +1,26 @@
 <template>
-  <div id="msg"></div>
+  <div>
+    <CompB />
+  </div>
 </template>
 <script>
-import Vue from "vue";
-// 创建构造器
-const testComponent = Vue.extend({
-  template: "<div>{{ text }}</div>",
-  data: function() {
-    return {
-      text: "extend test"
-    };
-  }
-});
+// 第二种方式，使用 extends 方式扩展单文件组件
+var CompA = {
+  template: `<h1>use extends</h1>`
+};
 
+var CompB = {
+  extends: CompA
+};
 export default {
   name: "Extend",
-  info: ["info"],
-  Zhname: "Vue.extend 全局 API",
-  mounted() {
-    // 创建 Profile 实例，并挂载到一个元素上。
-    new testComponent().$mount("#msg");
+  info: ["extend 扩展方式"],
+  Zhname: "extend 扩展vue单组件",
+  components: {
+    CompB
+  },
+  data() {
+    return {};
   }
 };
 </script>

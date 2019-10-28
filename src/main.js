@@ -20,6 +20,29 @@ MyPlugin.install = function (Vue) {
   Vue.prototype.log = function (e) {
     window.console.log(e)
   }
+  // 添加一个全局 alert方法
+  const msgComponent = Vue.extend({
+    template: `
+      <div id="msg">
+        <div>{{ text }}</div>
+        <div @click="close">关闭 msg</div>
+      </div>
+    `,
+    data: function () {
+      return {
+        text: "show msg"
+      };
+    },
+    methods: {
+      close() {
+        document.getElementById("msg").remove()
+      }
+    },
+  });
+  Vue.prototype.$msg = function () {
+    let component = new msgComponent().$mount();
+    document.getElementById("app").appendChild(component.$el);
+  }
 }
 Vue.use(MyPlugin)
 Vue.config.productionTip = false
